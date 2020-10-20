@@ -1,6 +1,7 @@
 import requests
 from bs4 import BeautifulSoup
 
+
 def imdb_top(imdb_top_n):
     base_url = (
         f"https://www.imdb.com/search/title?title_type="
@@ -13,6 +14,7 @@ def imdb_top(imdb_top_n):
         print(m.strong.text)  # movie's rating
         print(f"https://www.imdb.com{m.a.get('href')}")  # movie's page link
         print("*" * 40)
+
 
 if __name__ == "__main__":
     imdb_top(input("How many movies would you like to see? "))
